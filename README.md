@@ -1,3 +1,7 @@
+# Mental Temperature Converter
+
+This project was remixed from <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">https://glitch.com/~actions-on-google-api-ai-boilerplate</a>
+
 # Actions on Google API.AI Boilerplate
 
 <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">
