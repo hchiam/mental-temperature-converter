@@ -4,6 +4,8 @@ This project was remixed from <a href="https://glitch.com/~actions-on-google-api
 
 server.js: <a href="https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0">https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0</a>
 
+Only **server.js** and this **README.md** have been changed.
+
 # Actions on Google API.AI Boilerplate
 
 <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">

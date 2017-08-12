@@ -1,24 +1,18 @@
 // server.js
 // where your node app starts
 
-// init project
+// imports
 const express = require('express');
 const ApiAiAssistant = require('actions-on-google').ApiAiAssistant;
 const bodyParser = require('body-parser');
 const request = require('request');
-const app = express();
 const Map = require('es6-map');
-
-// Pretty JSON output for logs
 const prettyjson = require('prettyjson');
-// Join an array of strings into a sentence
-// https://github.com/epeli/underscore.string#tosentencearray-delimiter-lastdelimiter--string
-const toSentence = require('underscore.string/toSentence');
+
+// will use Express.js for higher-level code
+const app = express();
 
 app.use(bodyParser.json({type: 'application/json'}));
-
-// This boilerplate uses Express, but feel free to use whatever libs or frameworks
-// you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
@@ -47,7 +41,7 @@ app.get("/", function (request, response) {
 
 // Handle webhook requests
 app.post('/', function(req, res, next) {
-  // Log the request headers and body, to aide in debugging. You'll be able to view the
+  // Log the request headers and body, to aid in debugging. You'll be able to view the
   // webhook requests coming from API.AI by clicking the Logs button the sidebar.
   logObject('Request headers: ', req.headers);
   logObject('Request body: ', req.body);
