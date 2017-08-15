@@ -1,5 +1,11 @@
 # Mental Temperature Converter
 
+## Try it Out (In Your Browser, Without Voice Reply):
+
+https://bot.api.ai/mental-temperature-converter
+
+## Remix/Fork info:
+
 This project was remixed from <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">https://glitch.com/~actions-on-google-api-ai-boilerplate</a>
 
 server.js: <a href="https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0">https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0</a>
