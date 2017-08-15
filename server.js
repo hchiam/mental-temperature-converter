@@ -58,6 +58,7 @@ app.post('/', function(req, res, next) {
   function getCalculation(assistant) {
     console.log('Handling action: ' + CALCULATE_ACTION);
     let number = assistant.getArgument(EXPRESSION_PARAMETER);
+    
     // let requestURL = "https://www.calcatraz.com/calculator/api?c=1000*" + encodeURIComponent(number);
     // request(requestURL, function(error, response) {
     //   if(error) {
@@ -106,6 +107,11 @@ let server = app.listen(process.env.PORT, function () {
 
 // my custom code
 function myCustomCode(actionName, number, assistant) {
+  // check for invalid input:
+  if (isNaN(number)) { // escape function early if not given a number
+    assistant.ask('What is the new number?');
+  }
+  
   // if (actionName === 'c.to.f') return 'What is ' + number + ' times 2?';
   // if (actionName === 'c.to.f.step1') return 'Now what is ' + number + ' minus a tenth of ' + number + ' ?';
   // if (actionName === 'c.to.f.step2') return 'Now what is ' + number + ' plus 32 ?';
@@ -121,9 +127,8 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.step1 = step1;
     assistant.data.step2 = step2;
     assistant.data.step3 = step3;
-    assistant.data.stepAt = 1;
-    assistant.data.contextOut = {'stepAt' : 1};
-    assistant.data.unit = 'f';
+    // assistant.data.stepAt = 1;
+    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
     let coin = Math.random();
     if (coin < 0.5) {
       assistant.ask('Okay. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
@@ -140,9 +145,8 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.step2 = step2;
     assistant.data.step3 = step3;
     assistant.data.step4 = step4;
-    assistant.data.stepAt = 1;
-    assistant.data.contextOut = {'stepAt' : 1};
-    assistant.data.unit = 'c';
+    // assistant.data.stepAt = 1;
+    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
     let coin = Math.random();
     if (coin < 0.5) {
       assistant.ask('Okay. Step 1 to convert it to Celsius: What is ' + number + ' divided by 2? (And round it.)');
@@ -161,9 +165,8 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.step1 = step1;
       assistant.data.step2 = step2;
       assistant.data.step3 = step3;
-      assistant.data.stepAt = 1;
-      assistant.data.contextOut = {'stepAt' : 1};
-      assistant.data.unit = 'f';
+      // assistant.data.stepAt = 1;
+      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
       let coin = Math.random();
       if (coin < 0.5) {
         assistant.ask('Okay. Step 1 to change ' + number + ' Celsius into Fahrenheit: What is ' + number + ' times 2?');
@@ -180,9 +183,8 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.step2 = step2;
       assistant.data.step3 = step3;
       assistant.data.step4 = step4;
-      assistant.data.stepAt = 1;
-      assistant.data.contextOut = {'stepAt' : 1};
-      assistant.data.unit = 'c';
+      // assistant.data.stepAt = 1;
+      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
       let coin = Math.random();
       if (coin < 0.5) {
         assistant.ask('The first step to change ' + number + ' Fahrenheit into Celsius is to divide ' + number + ' by 2. What do you get? (And round it.)');
@@ -192,89 +194,105 @@ function myCustomCode(actionName, number, assistant) {
     }
     
     
-  } else if (assistant.data.unit === 'f') {
+  } else if (assistant.data.contextOut.unit === 'f') {
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
         assistant.data.stepAt = 2;
-        assistant.data.contextOut = {'stepAt' : 2};
+        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
         assistant.ask('Step 2: What is ' + number + ' minus a tenth of ' + number + '? (And round it.)');
       } else if (number > targetValue) {
         assistant.ask('Go lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('Go higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     } else if (assistant.data.contextOut.stepAt === 2) {
       let targetValue = Number(assistant.data.step2);
       if (number == targetValue) {
         assistant.data.stepAt = 3;
-        assistant.data.contextOut = {'stepAt' : 3};
+        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
         assistant.ask('Step 3: What is ' + number + ' plus 32?');
       } else if (number > targetValue) {
         assistant.ask('A little lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('A little higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     } else if (assistant.data.contextOut.stepAt === 3) {
       let originalValue = Number(assistant.data.originalValue);
       let targetValue = Number(assistant.data.step3);
       if (number == targetValue) {
         assistant.data.stepAt = 0;
-        assistant.data.contextOut = {'stepAt' : 0};
+        assistant.data.unit = '';
+        assistant.data.contextOut = {'stepAt' : 0, 'unit' : ''};
         assistant.tell("You got it! " + originalValue + " Celsius is about " + number + " Fahrenheit. Thanks for trying Mental Temperature Converter! Remember: practice makes perfect.");
       } else if (number > targetValue) {
         assistant.ask('Lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('Higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     }
     
     
-  } else if (assistant.data.unit === 'c') {
+  } else if (assistant.data.contextOut.unit === 'c') {
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
-        assistant.data.stepAt = 2;
-        assistant.data.contextOut = {'stepAt' : 2};
+        // assistant.data.stepAt = 2;
+        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
         assistant.ask('Step 2: What is ' + number + ' plus a tenth of ' + number + '? (And round it.)');
       } else if (number > targetValue) {
         assistant.ask('Go lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('Go higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     } else if (assistant.data.contextOut.stepAt === 2) {
       let targetValue = Number(assistant.data.step2);
       if (number == targetValue) {
-        assistant.data.stepAt = 3;
-        assistant.data.contextOut = {'stepAt' : 3};
+        // assistant.data.stepAt = 3;
+        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
         assistant.ask('Step 3: What is ' + number + ' minus 20?');
       } else if (number > targetValue) {
         assistant.ask('Less' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('More' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     } else if (assistant.data.contextOut.stepAt === 3) {
       let targetValue = Number(assistant.data.step3);
       if (number == targetValue) {
-        assistant.data.stepAt = 4;
-        assistant.data.contextOut = {'stepAt' : 4};
+        // assistant.data.stepAt = 4;
+        assistant.data.contextOut = {'stepAt' : 4, 'unit': 'c'};
         assistant.ask('Step 4: What is ' + number + ' plus 2?');
       } else if (number > targetValue) {
         assistant.ask('A little lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('A little higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     } else if (assistant.data.contextOut.stepAt === 4) {
       let originalValue = Number(assistant.data.originalValue);
       let targetValue = Number(assistant.data.step4);
       if (number == targetValue) {
         assistant.data.stepAt = 0;
-        assistant.data.contextOut = {'stepAt' : 0};
+        assistant.data.unit = '';
+        assistant.data.contextOut = {'stepAt' : 0, 'unit' : ''};
         assistant.tell("You got it! " + originalValue + " Fahrenheit is about " + number + " Celsius. Thanks for trying Mental Temperature Converter! Remember: practice makes perfect.");
       } else if (number > targetValue) {
         assistant.ask('Lower' + hintAddOn());
       } else if (number < targetValue) {
         assistant.ask('Higher' + hintAddOn());
+      } else {
+        assistant.ask('What is the new number?');
       }
     }
   }
