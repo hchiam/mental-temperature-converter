@@ -2,7 +2,7 @@
 
 ## Try it Out (In Your Browser, Without Voice Reply):
 
-https://bot.api.ai/mental-temperature-converter
+<a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
 
 ## Remix/Fork info:
 

@@ -194,7 +194,7 @@ function myCustomCode(actionName, number, assistant) {
     }
     
     
-  } else if (assistant.data.contextOut.unit === 'f') {
+  } else if (actionName === 'stepsF' && assistant.data.contextOut.unit === 'f') {
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
@@ -239,7 +239,7 @@ function myCustomCode(actionName, number, assistant) {
     }
     
     
-  } else if (assistant.data.contextOut.unit === 'c') {
+  } else if (actionName === 'stepsC' && assistant.data.contextOut.unit === 'c') {
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
@@ -296,7 +296,6 @@ function myCustomCode(actionName, number, assistant) {
       }
     }
   }
-  
   
 }
 
