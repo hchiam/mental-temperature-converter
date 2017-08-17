@@ -128,7 +128,7 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.step2 = step2;
     assistant.data.step3 = step3;
     // assistant.data.stepAt = 1;
-    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
+    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
     let coin = Math.random();
     if (coin < 0.5) {
       assistant.ask('Okay. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
@@ -146,7 +146,7 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.step3 = step3;
     assistant.data.step4 = step4;
     // assistant.data.stepAt = 1;
-    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
+    assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
     let coin = Math.random();
     if (coin < 0.5) {
       assistant.ask('Okay. Step 1 to convert it to Celsius: What is ' + number + ' divided by 2? (And round it.)');
@@ -166,7 +166,7 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.step2 = step2;
       assistant.data.step3 = step3;
       // assistant.data.stepAt = 1;
-      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
+      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
       let coin = Math.random();
       if (coin < 0.5) {
         assistant.ask('Okay. Step 1 to change ' + number + ' Celsius into Fahrenheit: What is ' + number + ' times 2?');
@@ -184,7 +184,7 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.step3 = step3;
       assistant.data.step4 = step4;
       // assistant.data.stepAt = 1;
-      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
+      assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
       let coin = Math.random();
       if (coin < 0.5) {
         assistant.ask('The first step to change ' + number + ' Fahrenheit into Celsius is to divide ' + number + ' by 2. What do you get? (And round it.)');
@@ -194,12 +194,12 @@ function myCustomCode(actionName, number, assistant) {
     }
     
     
-  } else if (actionName === 'stepsF' && assistant.data.contextOut.unit === 'f') {
+  } else if (assistant.data.contextOut.unit === 'c') { // c to f
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
         assistant.data.stepAt = 2;
-        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
+        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
         assistant.ask('Step 2: What is ' + number + ' minus a tenth of ' + number + '? (And round it.)');
       } else if (number > targetValue) {
         assistant.ask('Go lower' + hintAddOn());
@@ -212,7 +212,7 @@ function myCustomCode(actionName, number, assistant) {
       let targetValue = Number(assistant.data.step2);
       if (number == targetValue) {
         assistant.data.stepAt = 3;
-        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
+        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
         assistant.ask('Step 3: What is ' + number + ' plus 32?');
       } else if (number > targetValue) {
         assistant.ask('A little lower' + hintAddOn());
@@ -239,12 +239,12 @@ function myCustomCode(actionName, number, assistant) {
     }
     
     
-  } else if (actionName === 'stepsC' && assistant.data.contextOut.unit === 'c') {
+  } else if (assistant.data.contextOut.unit === 'f') { // f to c
     if (assistant.data.contextOut.stepAt === 1) {
       let targetValue = Number(assistant.data.step1);
       if (number == targetValue) {
         // assistant.data.stepAt = 2;
-        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
+        assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
         assistant.ask('Step 2: What is ' + number + ' plus a tenth of ' + number + '? (And round it.)');
       } else if (number > targetValue) {
         assistant.ask('Go lower' + hintAddOn());
@@ -257,7 +257,7 @@ function myCustomCode(actionName, number, assistant) {
       let targetValue = Number(assistant.data.step2);
       if (number == targetValue) {
         // assistant.data.stepAt = 3;
-        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
+        assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
         assistant.ask('Step 3: What is ' + number + ' minus 20?');
       } else if (number > targetValue) {
         assistant.ask('Less' + hintAddOn());
@@ -270,7 +270,7 @@ function myCustomCode(actionName, number, assistant) {
       let targetValue = Number(assistant.data.step3);
       if (number == targetValue) {
         // assistant.data.stepAt = 4;
-        assistant.data.contextOut = {'stepAt' : 4, 'unit': 'c'};
+        assistant.data.contextOut = {'stepAt' : 4, 'unit': 'f'};
         assistant.ask('Step 4: What is ' + number + ' plus 2?');
       } else if (number > targetValue) {
         assistant.ask('A little lower' + hintAddOn());
