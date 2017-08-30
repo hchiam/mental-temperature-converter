@@ -200,11 +200,11 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
-        assistant.ask('Step 2: Take ' + number + ', divide it by ten, and then subtract that from ' + number + '. (And round it.)');
+        assistant.ask('Step 2: Take ' + number + ', and subtract from it ' + number + ' divided by ten. (And round it.)');
       } else if (number > targetValue) {
-        assistant.ask('Go lower' + hintAddOn() + 'What is 2 times of ' + assistant.data.originalValue + '?');
+        assistant.ask('Go lower' + hintAddOn() + 'What is 2 times ' + assistant.data.originalValue + '?');
       } else if (number < targetValue) {
-        assistant.ask('Go higher' + hintAddOn() + 'What is 2 times of ' + assistant.data.originalValue + '?');
+        assistant.ask('Go higher' + hintAddOn() + 'What is 2 times ' + assistant.data.originalValue + '?');
       } else {
         assistant.ask('What is the new number?');
       }
