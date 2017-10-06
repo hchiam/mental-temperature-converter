@@ -202,9 +202,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
         assistant.ask('Step 2: Take ' + number + ', and subtract from it ' + number + ' divided by ten. (And round it.)');
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -215,9 +215,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
         assistant.ask('Step 3: What is ' + number + ' plus 32?');
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -230,9 +230,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 0, 'unit' : ''};
         assistant.tell("You got it! " + originalValue + " Celsius is about " + number + " Fahrenheit. Thanks for trying Mental Temperature Converter! Remember: practice makes perfect.");
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' plus 32?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' plus 32?');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' plus 32?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' plus 32?');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -247,9 +247,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
         assistant.ask('Step 2: Take ' + number + ', and add to it ' + number + ' divided by ten. (And round it.)');
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -260,9 +260,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
         assistant.ask('Step 3: What is ' + number + ' minus 20?');
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -273,9 +273,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 4, 'unit': 'f'};
         assistant.ask('Step 4: What is ' + number + ' plus 2?');
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' minus 20?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' minus 20?');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' minus 20?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' minus 20?');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -288,9 +288,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 0, 'unit' : ''};
         assistant.tell("You got it! " + originalValue + " Fahrenheit is about " + number + " Celsius. Thanks for trying Mental Temperature Converter! Remember: practice makes perfect.");
       } else if (number > targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step3 + ' plus 2?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step3 + ' plus 2?');
       } else if (number < targetValue) {
-        assistant.ask('Go ' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step3 + ' plus 2?');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'What\'s ' + assistant.data.step3 + ' plus 2?');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -314,7 +314,7 @@ function hintAddOn() {
 // detect closeness
 function detectCloseness(number,targetValue) {
   if (Math.abs(number - targetValue) <= 5) {
-    return 'a little';
+    return ' a little';
   }
   return '';
 }
