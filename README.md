@@ -1,5 +1,7 @@
 # Mental Temperature Converter
 
+Now listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d8570e" target="_blank">Google Assistant web directory</a>.
+
 ## Try it Out (In Your Browser, Without Voice Reply):
 
 <a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
