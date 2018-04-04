@@ -4,6 +4,8 @@
 
 Now listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d8570e" target="_blank">Google Assistant web directory</a>.
 
+The lessons learned from this project are applied to [Code Tutor](https://github.com/hchiam/code-tutor).
+
 ## Try it Out (In Your Browser, Without Voice Reply):
 
 <a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
