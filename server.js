@@ -131,9 +131,9 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
     let coin = Math.random();
     if (coin < 0.5) {
-      assistant.ask('Okay. I heard ' + number + ' Celsius. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
+      assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
     } else {
-      assistant.ask('I heard ' + number + ' Celsius. Step 1: What is double of ' + number + '?');
+      assistant.ask('I heard ' + number + ' degrees Celsius. Step 1: What is double of ' + number + '?');
     }
   } else if (actionName === 'toC') {
     const step1 = Math.round(number/2);
@@ -169,9 +169,9 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
       let coin = Math.random();
       if (coin < 0.5) {
-        assistant.ask('Okay. I heard ' + number + ' Celsius. Step 1 to turn it into degrees Fahrenheit: What is ' + number + ' times 2?');
+        assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to turn it into degrees Fahrenheit: What is ' + number + ' times 2?');
       } else {
-        assistant.ask('Okay. I heard ' + number + ' Celsius. Step 1 to change it to Fahrenheit: What is ' + number + ' times 2?');
+        assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to change it to Fahrenheit: What is ' + number + ' times 2?');
       }
     } else {
       const step1 = Math.round(number/2);
@@ -187,9 +187,9 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
       let coin = Math.random();
       if (coin < 0.5) {
-        assistant.ask('I heard ' + number + ' Fahrenheit. The first step to change it to Celsius is to divide ' + number + ' by 2. What do you get? (To make things easier, round it.)');
+        assistant.ask('I heard ' + number + ' degrees Fahrenheit. The first step to change it to Celsius is to divide ' + number + ' by 2. What do you get? (To make things easier, round it.)');
       } else {
-        assistant.ask('Okay. I heard ' + number + ' Fahrenheit. Let\'s start converting it to Celsius: What is ' + number + ' divided by 2? (To make things easier, round it.)');
+        assistant.ask('Okay. I heard ' + number + ' degrees Fahrenheit. Let\'s start converting it to Celsius: What is ' + number + ' divided by 2? (To make things easier, round it.)');
       }
     }
     
@@ -200,7 +200,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
-        assistant.ask('Step 2: Take ' + number + ', and subtract from it ' + number + ' divided by ten. (To make things easier, round it.)');
+        assistant.ask('Step 2: Take ' + number + ', and subtract from it ' + number + ' divided by ten. (To make things easier, round it. Or guess.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
       } else if (number < targetValue) {
@@ -215,9 +215,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
         assistant.ask('Step 3: What is ' + number + ' plus 32?');
       } else if (number > targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
       } else if (number < targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -245,7 +245,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         // assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
-        assistant.ask('Step 2: Take ' + number + ', and add to it ' + number + ' divided by ten. (And round it.)');
+        assistant.ask('Step 2: Take ' + number + ', and add to it ' + number + ' divided by ten. (And round it. Or guess.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
       } else if (number < targetValue) {
@@ -260,9 +260,9 @@ function myCustomCode(actionName, number, assistant) {
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
         assistant.ask('Step 3: What is ' + number + ' minus 20?');
       } else if (number > targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
       } else if (number < targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
       } else {
         assistant.ask('What is the new number?');
       }
