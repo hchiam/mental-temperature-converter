@@ -131,7 +131,7 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
     let coin = Math.random();
     if (coin < 0.5) {
-      assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
+      assistant.ask('I heard ' + number + ' degrees Celsius. Step 1 to convert it to Fahrenheit: What is ' + number + ' times 2?');
     } else {
       assistant.ask('I heard ' + number + ' degrees Celsius. Step 1: What is double of ' + number + '?');
     }
@@ -149,9 +149,9 @@ function myCustomCode(actionName, number, assistant) {
     assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'f'};
     let coin = Math.random();
     if (coin < 0.5) {
-      assistant.ask('Okay. I heard ' + number + ' Fahrenheit. Step 1 to convert it to Celsius: What is half of ' + number + '? (To make things easier, round it.)');
+      assistant.ask('I heard ' + number + ' degrees Fahrenheit. Step 1 to convert it to Celsius: What is half of ' + number + '? (To make things easier, round it.)');
     } else {
-      assistant.ask('I heard ' + number + ' Fahrenheit. Step 1: What is half of ' + number + '? (To make things easier, round it.)');
+      assistant.ask('I heard ' + number + ' degrees Fahrenheit. Step 1: What is half of ' + number + '? (To make things easier, round it.)');
     }
   } else if (actionName === 'generate.example') {
     let number = Math.floor((Math.random() * 100) + 1);
@@ -169,9 +169,9 @@ function myCustomCode(actionName, number, assistant) {
       assistant.data.contextOut = {'stepAt' : 1, 'unit' : 'c'};
       let coin = Math.random();
       if (coin < 0.5) {
-        assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to turn it into degrees Fahrenheit: What is ' + number + ' times 2?');
+        assistant.ask('I heard ' + number + ' degrees Celsius. Step 1 to turn it into degrees Fahrenheit: What is ' + number + ' times 2?');
       } else {
-        assistant.ask('Okay. I heard ' + number + ' degrees Celsius. Step 1 to change it to Fahrenheit: What is ' + number + ' times 2?');
+        assistant.ask('I heard ' + number + ' degrees Celsius. Step 1 to change it to Fahrenheit: What is ' + number + ' times 2?');
       }
     } else {
       const step1 = Math.round(number/2);
@@ -189,7 +189,7 @@ function myCustomCode(actionName, number, assistant) {
       if (coin < 0.5) {
         assistant.ask('I heard ' + number + ' degrees Fahrenheit. The first step to change it to Celsius is to divide ' + number + ' by 2. What do you get? (To make things easier, round it.)');
       } else {
-        assistant.ask('Okay. I heard ' + number + ' degrees Fahrenheit. Let\'s start converting it to Celsius: What is ' + number + ' divided by 2? (To make things easier, round it.)');
+        assistant.ask('I heard ' + number + ' degrees Fahrenheit. Let\'s start converting it to Celsius: What is ' + number + ' divided by 2? (To make things easier, round it.)');
       }
     }
     
@@ -200,7 +200,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
-        assistant.ask('Step 2: Move the decimal in ' + number + ' one place to the left. Now do ' + number + ' minus that number. What do you get? (And round it. Or guess.)');
+        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And do ' + number + ' minus that number. What do you get? (You can guess if you\'re stuck.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
       } else if (number < targetValue) {
@@ -213,11 +213,11 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         assistant.data.stepAt = 3;
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'c'};
-        assistant.ask('Step 3: What is ' + number + ' plus 32?');
+        assistant.ask(praise() + 'Step 3: What is ' + number + ' plus 32?');
       } else if (number > targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by 10. (And round it.)');
       } else if (number < targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by ten. (And round it.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and subtract from it ' + assistant.data.step1 + ' divided by 10. (And round it.)');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -245,7 +245,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         // assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
-        assistant.ask('Step 2: Move the decimal in ' + number + ' one place to the left. Now add that to ' + number + '. What do you get? (And round it. Or guess.)');
+        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And add that to ' + number + '. What do you get? (You can guess if you\'re stuck.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
       } else if (number < targetValue) {
@@ -258,11 +258,11 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         // assistant.data.stepAt = 3;
         assistant.data.contextOut = {'stepAt' : 3, 'unit': 'f'};
-        assistant.ask('Step 3: What is ' + number + ' minus 20?');
+        assistant.ask(praise() + 'Step 3: What is ' + number + ' minus 20?');
       } else if (number > targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by 10. (And round it.)');
       } else if (number < targetValue) {
-        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by ten. (And round it. Or guess.)');
+        assistant.ask('Go' + detectCloseness(number,targetValue) + ' higher' + hintAddOn() + 'Take ' + assistant.data.step1 + ', and add to it ' + assistant.data.step1 + ' divided by 10. (And round it.)');
       } else {
         assistant.ask('What is the new number?');
       }
@@ -271,7 +271,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         // assistant.data.stepAt = 4;
         assistant.data.contextOut = {'stepAt' : 4, 'unit': 'f'};
-        assistant.ask('Step 4: What is ' + number + ' plus 2?');
+        assistant.ask(praise() + 'Step 4: What is ' + number + ' plus 2?');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.step2 + ' minus 20?');
       } else if (number < targetValue) {
@@ -319,3 +319,13 @@ function detectCloseness(number,targetValue) {
   return '';
 }
 
+
+// randomize positive feedback/confirmation
+function praise() {
+  let coin = Math.random();
+  if (coin < 0.5) {
+    return 'Correct! ';
+  } else {
+    return 'Yes! ';
+  }
+}
