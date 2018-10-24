@@ -200,7 +200,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'c'};
-        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And do ' + number + ' minus that number. What do you get? (You can guess if you\'re stuck.)');
+        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And do ' + number + ' minus that number. What do you get? (If you\'re stuck, just guess.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What is ' + assistant.data.originalValue + ' times 2?');
       } else if (number < targetValue) {
@@ -245,7 +245,7 @@ function myCustomCode(actionName, number, assistant) {
       if (number == targetValue) {
         // assistant.data.stepAt = 2;
         assistant.data.contextOut = {'stepAt' : 2, 'unit': 'f'};
-        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And add that to ' + number + '. What do you get? (You can guess if you\'re stuck.)');
+        assistant.ask(praise() + 'Step 2: Move the decimal in ' + number + ' a place to the left. Round it. And add that to ' + number + '. What do you get? (If you\'re stuck, just guess.)');
       } else if (number > targetValue) {
         assistant.ask('Go' + detectCloseness(number,targetValue) + ' lower' + hintAddOn() + 'What\'s ' + assistant.data.originalValue + ' divided by 2, rounded?');
       } else if (number < targetValue) {
