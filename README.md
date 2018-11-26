@@ -8,7 +8,7 @@ Listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d85
 
 ## Try it Out (In Your Browser, Without Voice Reply):
 
-<a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
+<a href="https://codepen.io/hchiam/full/NEzXja" target="_blank">https://codepen.io/hchiam/full/NEzXja</a>
 
 ## YouTube Demo:
 
