@@ -1,7 +1,5 @@
 # Ok Google, Talk to Mental Temperature Converter
 
-[![HitCount](http://hits.dwyl.io/hchiam/mental-temperature-converter.svg)](http://hits.dwyl.io/hchiam/mental-temperature-converter)
-
 Listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d8570e" target="_blank">Google Assistant web directory</a>.
 
 <a href="https://assistant.google.com/services/invoke/uid/0000004e69d8570e">🅖 Talk to Mental Temperature Converter</a>
