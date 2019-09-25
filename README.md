@@ -2,13 +2,9 @@
 
 Listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d8570e" target="_blank">Google Assistant web directory</a>.
 
-<a href="https://assistant.google.com/services/invoke/uid/0000004e69d8570e">🅖 Talk to Mental Temperature Converter</a>
-
-Built in 1 month to be submitted for the contest August 31st 2017. I used API.ai (now called Dialogflow), Actions on Google, Node.js, and Express.js to build a Google Assistant app. 
-
 ## Try it Out (In Your Browser, Without Voice Reply):
 
-<a href="https://codepen.io/hchiam/full/NEzXja" target="_blank">https://codepen.io/hchiam/full/NEzXja</a>
+<a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
 
 ## YouTube Demo:
 
