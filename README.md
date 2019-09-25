@@ -10,6 +10,8 @@ Built in 1 month to be submitted for the contest August 31st 2017. I used API.ai
 
 <a href="https://codepen.io/hchiam/full/NEzXja" target="_blank">https://codepen.io/hchiam/full/NEzXja</a>
 
+<a href="https://bot.api.ai/mental-temperature-converter" target="_blank">https://bot.api.ai/mental-temperature-converter</a>
+
 ## YouTube Demo:
 
 <a href="https://www.youtube.com/watch?v=7eiwrohLoGk" target="_blank">https://www.youtube.com/watch?v=7eiwrohLoGk</a>
