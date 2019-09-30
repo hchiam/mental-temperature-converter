@@ -16,7 +16,7 @@ Built in 1 month to be submitted for the contest August 31st 2017. I used API.ai
 
 <a href="https://www.youtube.com/watch?v=7eiwrohLoGk" target="_blank">https://www.youtube.com/watch?v=7eiwrohLoGk</a>
 
-## API V2:
+## API V2 - Making your own Google Assistant app:
 
 API V1 will be deprecated as of October 23rd, 2019.
 
