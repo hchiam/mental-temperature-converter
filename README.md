@@ -16,7 +16,9 @@ Built in 1 month to be submitted for the contest August 31st 2017. I used API.ai
 
 <a href="https://www.youtube.com/watch?v=7eiwrohLoGk" target="_blank">https://www.youtube.com/watch?v=7eiwrohLoGk</a>
 
-## API V2 - Making your own Google Assistant app:
+## Making your own Google Assistant app:
+
+### API V2:
 
 API V1 will be deprecated as of October 23rd, 2019.
 
@@ -28,10 +30,14 @@ The key files are:
 * [package.json](https://github.com/hchiam/mental-temperature-converter/blob/master/package.json) for the fulfillment code setup in Dialogflow.
 * [ment-temp-conv-v2.zip](https://github.com/hchiam/mental-temperature-converter/blob/master/ment-temp-conv-v2.zip) to restore/import from zip in Dialogflow.
 
-## API V1 - Remix/Fork info:
+### API V1 (Now Deprecated) - Remix/Fork Info:
 
 An older version of this project was remixed from <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">https://glitch.com/~actions-on-google-api-ai-boilerplate</a>
 
 server.js: <a href="https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0">https://glitch.com/edit/#!/mental-temp-converter?path=server.js:1:0</a>
 
 Only **server.js** and this **README.md** have been changed.
+
+## You Might Also Like:
+
+<a href="https://github.com/hchiam/code-tutor" target="_blank">https://github.com/hchiam/code-tutor</a>
