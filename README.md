@@ -22,6 +22,12 @@ API V1 will be deprecated as of October 23rd, 2019.
 
 To get caught up faster, try building a mini app from scratch, following the instructions here: <a href="https://github.com/hchiam/dialogflow-webhook-boilerplate-nodejs" target="_blank">https://github.com/hchiam/dialogflow-webhook-boilerplate-nodejs</a>
 
+The key files are:
+
+* [index.js](https://github.com/hchiam/mental-temperature-converter/blob/master/index.js) for the fulfillment code in Dialogflow.
+* [package.json](https://github.com/hchiam/mental-temperature-converter/blob/master/package.json) for the fulfillment code setup in Dialogflow.
+* [ment-temp-conv-v2.zip](https://github.com/hchiam/mental-temperature-converter/blob/master/ment-temp-conv-v2.zip) to restore/import from zip in Dialogflow.
+
 ## API V1 - Remix/Fork info:
 
 An older version of this project was remixed from <a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">https://glitch.com/~actions-on-google-api-ai-boilerplate</a>
