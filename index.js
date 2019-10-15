@@ -8,7 +8,8 @@ const functions = require('firebase-functions');
 const app = dialogflow({debug: true});
 
 app.intent('toC', (conv) => {
-  const input = conv.contexts.get('input').parameters;
+  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('toc-followup'));
+  const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
   const unit = input.unit;
   const stepAt = input.stepAt || 1;
@@ -43,7 +44,8 @@ app.intent('toC', (conv) => {
 });
 
 app.intent('toF', (conv) => {
-  const input = conv.contexts.get('input').parameters;
+  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('tof-followup'));
+  const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
   const unit = input.unit;
   const stepAt = input.stepAt || 1;
