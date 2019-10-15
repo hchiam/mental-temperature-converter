@@ -8,6 +8,7 @@ const functions = require('firebase-functions');
 const app = dialogflow({debug: true});
 
 app.intent('toC', (conv) => {
+  // NOTE: toC-followup is lowercased to toc-followup
   const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('toc-followup'));
   const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
@@ -44,6 +45,7 @@ app.intent('toC', (conv) => {
 });
 
 app.intent('toF', (conv) => {
+  // NOTE: toF-followup is lowercased to tof-followup
   const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('tof-followup'));
   const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
