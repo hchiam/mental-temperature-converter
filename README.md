@@ -2,11 +2,13 @@
 
 [![HitCount](http://hits.dwyl.com/hchiam/mental-temperature-converter.svg)](http://hits.dwyl.com/hchiam/mental-temperature-converter)
 
+An app for the Google Assistant to help you practice mentally converting temperature from degrees Celsius to Fahrenheit, or from Fahrenheit to Celsius.
+
 Listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d8570e" target="_blank">Google Assistant web directory</a>.
 
 <a href="https://assistant.google.com/services/invoke/uid/0000004e69d8570e">🅖 Talk to Mental Temperature Converter</a>
 
-Built in 1 month to be submitted for the contest August 31st 2017. I used API.ai (now called Dialogflow), Actions on Google, Node.js, and Express.js to build a Google Assistant app. 
+Original version built in 1 month to be submitted for the contest August 31st 2017. For that first iteration, I used API.ai (now called Dialogflow), Actions on Google, Node.js, Express.js, and hosted the original webhook server on [Glitch.com](https://glitch.com/edit/#!/mental-temp-converter) to build a Google Assistant app. 
 
 ## Try it Out (In Your Browser, Without Voice Reply):
 
