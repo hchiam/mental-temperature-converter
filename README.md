@@ -8,7 +8,7 @@ Listed in the <a href="https://assistant.google.com/services/a/uid/0000004e69d85
 
 <a href="https://assistant.google.com/services/invoke/uid/0000004e69d8570e">🅖 Talk to Mental Temperature Converter</a>
 
-Original version built in 1 month to be submitted for the contest August 31st 2017. For that first iteration, I used API.ai (now called Dialogflow), Actions on Google, Node.js, Express.js, and hosted the original webhook server on [Glitch.com](https://glitch.com/edit/#!/mental-temp-converter) to build a Google Assistant app. 
+Original version built in 1 month to be submitted for the contest August 31st 2017. For that first iteration, I built the Google Assistant app using API.ai (now called Dialogflow), Actions on Google, Node.js, and Express.js, and hosted the original webhook server on [Glitch.com](https://glitch.com/edit/#!/mental-temp-converter) 
 
 ## Try it Out (In Your Browser, Without Voice Reply):
 
