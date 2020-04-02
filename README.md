@@ -1,6 +1,6 @@
 # Ok Google, Talk to Mental Temperature Converter
 
-[![HitCount](http://hits.dwyl.com/hchiam/mental-temperature-converter.svg)](http://hits.dwyl.com/hchiam/mental-temperature-converter)
+![version](https://img.shields.io/github/release/hchiam/mental-temperature-converter) [![HitCount](http://hits.dwyl.com/hchiam/mental-temperature-converter.svg)](http://hits.dwyl.com/hchiam/mental-temperature-converter)
 
 An app for the Google Assistant to help you practice mentally converting temperature from degrees Celsius to Fahrenheit, or from Fahrenheit to Celsius.
 
