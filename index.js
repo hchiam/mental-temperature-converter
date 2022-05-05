@@ -8,8 +8,7 @@ const functions = require('firebase-functions');
 const app = dialogflow({debug: true});
 
 app.intent('toC', (conv) => {
-  // NOTE: toC-followup is lowercased to toc-followup
-  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('toc-followup'));
+  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('toC-followup'));
   const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
   const unit = input.unit;
@@ -21,7 +20,7 @@ app.intent('toC', (conv) => {
   const step3 = step2 - 20;
   const step4 = step3 + 2;
   conv.contexts.set(
-      'toc-followup',
+      'toC-followup',
       5,
       {
         number: number,
@@ -45,8 +44,7 @@ app.intent('toC', (conv) => {
 });
 
 app.intent('toF', (conv) => {
-  // NOTE: toF-followup is lowercased to tof-followup
-  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('tof-followup'));
+  const inputEvenIfRePrompt = (conv.contexts.get('input') || conv.contexts.get('toF-followup'));
   const input = inputEvenIfRePrompt.parameters;
   const number = input.number;
   const unit = input.unit;
@@ -57,7 +55,7 @@ app.intent('toF', (conv) => {
   const step2 = Math.round(step1 - step1/10);
   const step3 = step2 + 32;
   conv.contexts.set(
-      'tof-followup',
+      'toF-followup',
       5,
       {
         number: number,
@@ -87,7 +85,7 @@ app.intent('generateExample', (conv) => {
     let step2 = Math.round(step1 - step1/10);
     let step3 = step2 + 32;
     conv.contexts.set(
-        'tof-followup',
+        'toF-followup',
         5,
         {
           number: number,
@@ -112,7 +110,7 @@ app.intent('generateExample', (conv) => {
     let step3 = step2 - 20;
     let step4 = step3 + 2;
     conv.contexts.set(
-        'toc-followup',
+        'toC-followup',
         5,
         {
           number: number,
@@ -136,8 +134,7 @@ app.intent('generateExample', (conv) => {
 });
 
 app.intent('stepsC', (conv) => {
-  // NOTE: toC-followup is lowercased to toc-followup
-  const input = conv.contexts.get('toc-followup').parameters;
+  const input = conv.contexts.get('toC-followup').parameters;
   const number = input.number;
   const originalValue = input.originalValue;
   const stepAt = input.stepAt || 1;
@@ -198,8 +195,7 @@ app.intent('stepsC', (conv) => {
 });
 
 app.intent('stepsF', (conv) => {
-  // NOTE: toF-followup is lowercased to tof-followup
-  const input = conv.contexts.get('tof-followup').parameters;
+  const input = conv.contexts.get('toF-followup').parameters;
   const number = input.number;
   const originalValue = input.originalValue;
   const stepAt = input.stepAt || 1;
@@ -252,14 +248,14 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
 
 function setFollowupContext_toC(conv, input, setStepAt) {
   const toWhat = input.toWhat || 'c';
-  const contextName = 'toc-followup';
+  const contextName = 'toC-followup';
   setFollowupContext(conv, input, setStepAt, toWhat, contextName);
 }
 
 
 function setFollowupContext_toF(conv, input, setStepAt) {
   const toWhat = input.toWhat || 'f';
-  const contextName = 'tof-followup';
+  const contextName = 'toF-followup';
   setFollowupContext(conv, input, setStepAt, toWhat, contextName);
 }
 
@@ -282,11 +278,11 @@ function setFollowupContext(conv, input, setStepAt, toWhat, contextName) {
     step2: step2,
     step3: step3,
   };
-  if (contextName === 'toc-followup') {
+  if (contextName === 'toC-followup') {
     parameters.step4 = input.step4;
   }
   conv.contexts.set(
-    contextName, // 'toc-followup' or 'tof-followup'
+    contextName, // 'toC-followup' or 'toF-followup'
     5,
     parameters
 );
